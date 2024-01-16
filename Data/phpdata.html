@@ -1,0 +1,2780 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"contact="width=device-width,initial-scale=1,maximum-scale=1">
+
+     
+	<title>Php_Code</title>
+	<link rel="stylesheet"type="text/css"href="">
+  <link rel="icon" href="img\logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+:root{
+	--main-color: #DD2F6E;
+	--color-dark: #1D2231;
+	--text-grey:  #8390A2;
+	--maintwo-color: -webkit-linear-gradient(to right, #38ef7d, #11998e);  
+    --maintwo-color: linear-gradient(to right, #38ef7d, #11998e);
+    --php-color: #187bcd;
+   
+
+}
+
+*
+{
+	padding: 0;
+	margin:  0;
+	box-sizing: border-box;
+	list-style-type: none;
+	text-decoration: none;
+	font-family: 'poppins',sans-serif; 
+}
+
+.sidebar {
+	width: 345px;
+	position: fixed;
+	left: 0;
+    top:0;
+	height: 100%;
+	background: var(--maintwo-color);
+	z-index: 100;
+	transition: width 300ms;
+}
+
+.sidebar-brand{
+	height: 90px;
+	padding: 1rem 0rem 1rem 2prem;
+	color: #fff;
+}
+  #hp{
+  	margin-top: 1rem;
+	margin-left:1.5rem;
+	margin-bottom: 1rem;
+	font-size: 2rem;
+}
+
+.sidebar-brand span{
+	display: inline-block;
+	padding-right: 1rem;
+}
+ .sidebar-menu li{
+ 	width: 100%;
+ 	margin-bottom: 1.7rem;
+ 	padding-left: 2rem;
+ }
+
+ .sidebar-menu a{
+ 	padding-left: 1rem;
+ 	display: block;
+ 	color: #fff;
+ 	font-size: 1.1rem;
+ }
+ .sidebar-menu a .active{
+ 	background: #fff;
+ 	padding-top: 1rem;
+ 	padding-bottom: 1rem;
+ 	color: var(--maintwo-color);
+ 	border-radius: 30px 0px 0px 30px;
+ }
+ .sidebar-menu a span:first-child{
+ 	font-size: 1.5rem;
+ 	padding-right: 1rem;
+ }
+  #nav-toggle checked + .sidebar{
+ 	width: 70px;
+ }
+ #nav-toggle checked + .sidebar .sidebar-brand ,
+ #nav-toggle checked + .sidebar .sidebar-menu li {
+ 	padding-left:1rem ;
+ }
+ #nav-toggle checked + .sidebar li a{
+ 	padding-left: 0rem;
+ }
+ #nav-toggle checked + .sidebar li a span{
+ 	padding-right: 1rem;
+ 	text-align: center;
+ }
+  #nav-toggle checked + .sidebar li a span{
+ 	padding-right: 0rem;
+ }
+ #nav-toggle checked + .sidebar .sidebar-brand h2 span last-child,
+ #nav-toggle checked + .sidebar li span last-child{
+ 	display: none;
+ }
+ #nav-toggle checked  main-content {
+ 	margin-left: 70px;
+ }
+ #nav-toggle checked  main-content header{
+ width: calc(100% - 70px);
+ left: 70px;
+ }
+.main-content{
+	transition: margin-left 300ms;
+	margin-left: 345px;
+}
+header{
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem 1.5rem;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+	position: fixed;
+	left: 345px;
+	width: calc(100% - 345px);
+	top: 0;
+	z-index: 100;
+  transition: left 300ms;
+}
+ #nav-toggle{
+ 	display: none;
+ }
+.header h2
+{
+	color: #222;
+}
+.header label span{
+	font-size: 1.7rem;
+	padding-right: 1rem;
+
+}
+.search-wrapper{
+	/*margin-left: 250px;
+	margin-right: 400px;*/
+	border: 1px solid #ccc;
+	border-radius: 30px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	overflow-x: hidden;
+}
+.search-wrapper span{
+	display: inline-block;
+	padding: 0rem 1rem;
+	font-size: 1.6rem;
+}
+.search-wrapper input{
+	height: 100%;
+	padding: .5rem;
+	border: none;
+	outline: none;
+}	
+.user-wrapper{
+	display: flex;
+	align-items: center;
+}
+.user-wrapper img{
+	border-radius: 50%;
+	margin-right: 1rem;
+}
+.user-wrapper small{
+	display: inline-block;
+	color: var(--text-grey);
+}
+main {
+	margin-top: 85px;
+	padding: 2rem 1.5rem;
+	background: #f1f5f9;
+	min-height:calc(100vh - 90px) ;
+}
+.container p{
+     font-size: 30px;
+     color: black;
+}
+.container textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn{
+  margin: 5px 0 40px 0;
+}
+.btn button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn .tooltip{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn .tooltip.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+   
+
+.container1 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container1 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container1 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn1{
+  margin: 5px 0 40px 0;
+}
+.btn1 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn1 .tooltip1{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn1 .tooltip1.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip1:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+   
+
+.container2 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container2 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container2 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn2{
+  margin: 5px 0 40px 0;
+}
+.btn2 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn2 .tooltip2{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn2 .tooltip2.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip2:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+   
+
+
+.container3 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container3 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container3 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn3{
+  margin: 5px 0 40px 0;
+}
+.btn3 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn3 .tooltip3{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn3 .tooltip3.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip3:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/ 
+
+.container4 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container4 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container4 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn4{
+  margin: 5px 0 40px 0;
+}
+.btn4 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn4 .tooltip4{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn4 .tooltip4.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip4:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+
+
+
+.container5 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container5 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container5 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn5{
+  margin: 5px 0 40px 0;
+}
+.btn5 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn5 .tooltip5{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn5 .tooltip5.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip5:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+   
+
+.container6 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container6 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container6 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn6{
+  margin: 5px 0 40px 0;
+}
+.btn6 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn6 .tooltip6{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn6 .tooltip6.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip6:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+   
+.container7 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container7 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container7 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn7{
+  margin: 5px 0 40px 0;
+}
+.btn7 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn7 .tooltip7{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn7 .tooltip7.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip7:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+
+.container8 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container8 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container8 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn8{
+  margin: 5px 0 40px 0;
+}
+.btn8 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn8 .tooltip8{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn8 .tooltip8.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip8:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+
+.container9 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container9 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container9 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn9{
+  margin: 5px 0 40px 0;
+}
+.btn9 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn9 .tooltip9{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn9 .tooltip9.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip9:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+
+.container10 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container10 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 370px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container10 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn10{
+  margin: 5px 0 40px 0;
+}
+.btn10 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn10 .tooltip10{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn10 .tooltip10.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip10:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+
+.container11 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container11 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container11 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn11{
+  margin: 5px 0 40px 0;
+}
+.btn11 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn11 .tooltip11{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn11 .tooltip11.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip11:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+
+
+.container12 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container12 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container12 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn12{
+  margin: 5px 0 40px 0;
+}
+.btn12 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn12 .tooltip12{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn12 .tooltip12.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip12:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+
+.container13 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container13 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container13 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn13{
+  margin: 5px 0 40px 0;
+}
+.btn13 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn13 .tooltip13{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn13 .tooltip13.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip13:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+
+.container14 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container14 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container14 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn14{
+  margin: 5px 0 40px 0;
+}
+.btn14 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn14 .tooltip14{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn14 .tooltip14.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip14:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+
+.container15 p{
+     font-size: 30px;
+     color: black;
+}
+
+.container15 textarea{
+  background: #12192c;
+  width: 860px;
+  height: 390px;
+  padding: 20px;
+  font-size: 17px;
+  text-align: justify;
+  color: #fff;
+  border-radius: 10px;
+  border: 4px solid #187bcd;
+}
+.container15 textarea:focus{
+  outline-color: #16a085;
+  border: 5px solid #16a085;
+}
+
+.btn15{
+  margin: 5px 0 40px 0;
+}
+.btn15 button{
+  padding: 9px 15px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #187bcd;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  outline: none;
+}
+.btn15 .tooltip15{
+  position: relative;
+  margin-left: -10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f2f2f2;
+  z-index: 10;
+  background: #187bcd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, margin-left 0.4s;
+}
+.btn15 .tooltip15.show{
+  margin-left: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tooltip15:before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #187bcd;
+  top: 50%;
+  left: -5px;
+  z-index: -1;
+  transform: translateY(-50%) rotate(45deg);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8b9dc3;
+    cursor: pointer;
+}
+.credit a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #12192c;
+}
+.credit {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+/*close*/
+
+
+.contact span {
+	font-size: 1.2rem;
+	display: inline-block;
+	margin-left: .5rem;
+	color: var(--main-color);
+}
+@media only screen and (max-width: 1200px){
+ .sidebar{
+ 	width: 70px;
+ }
+ .sidebar .sidebar-brand ,
+ .sidebar li {
+ 	padding-left:1rem ;
+ 	text-align: center;
+ }
+ .sidebar li a{
+ 	padding-left: 0rem;
+ }
+ .sidebar .sidebar-brand h2 span last-child,
+ .sidebar li span last-child{
+ 	display: none;
+ }
+.main-content {
+ 	margin-left: 70px;
+ }
+ .main-content header{
+ width: calc(100% - 70px);
+ left: 70px;
+ }	
+ .sidebar .hover{
+ 	width:345px;
+ }
+ .sidebar .hover .sidebar-brand ,
+ .sidebar li {
+ 	padding-left:2rem ;
+ 	text-align: left;
+ }
+ .sidebar li a{
+ 	padding-left: 1rem;
+ }
+ .sidebar .hover .sidebar-brand h2 span last-child,
+ .sidebar .hover li span last-child {
+ 	display: inline;
+ }
+
+@media only screen and (max-width: 960px){
+	.cards{
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.recent-grid{
+		grid-template-columns:100%;
+	}
+	.search-wrapper{
+		display: none;
+	}
+	.sidebar{
+		left: -100% !important;
+	}
+	header h2 label {
+		display: inline-block;
+		text-align: center;
+		background: var(--main-color);
+		padding-right: 0rem;
+		margin-right: 1rem;
+		height: 40px;
+		width: 40px;
+		border-radius: 50%;
+		color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center !important;
+	}
+		header h2 span {
+		text-align: center;
+		padding-right: 0rem;
+	}
+   	header h2{
+   		font-size: 1.1rem;
+   	}
+	.main-content{
+		width: 100%;
+		margin-left:0rem ;
+	}
+	header{
+		width: 100% !important;
+		left: 0 !important;
+	}
+	#nav-toggle:checked + .sidebar {
+		left: 0 !important;
+  	width:345px;
+  	z-index: 100;
+ }
+ .sidebar:hover{
+ 	width: 345px;
+ 	z-index: 200;
+ }
+ #nav-toggle:checked +.sidebar  .sidebar-brand ,
+ #nav-toggle:checked +.sidebar   li {
+ 	padding-left:2rem ;
+ 	text-align: left;
+ }
+ #nav-toggle:checked +.sidebar li a{
+ 	padding-left: 1rem;
+ }
+ #nav-toggle:checked + .sidebar .sidebar-brand h2 span last-child,
+ #nav-toggle:checked + .sidebar li span last-child{
+ 	display: inline;
+ }
+ #nav-toggle:checked + .main-content{
+ 	margin-left: 0rem !important;
+ }
+
+@media only screen and (max-width: 560px){
+ .cards{
+  	     grid-template-columns: 100%;
+       }
+	} 
+
+
+ 	                                                                            
+	</style>	
+</head>
+<body>
+
+<link href="fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+<link href="fontawesome2/css/all.css" rel="stylesheet"> <!--load all styles -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <input type="checkbox" id="nav-toggle">
+	<div class="sidebar">
+		   <div class="sidebar-brend">
+		     	<h2 id="hp"><span class="fab fa-accusoft" id="hp"></span>i_Book</h2>
+		   </div>
+		      <div class="sidebar-menu">
+            <ul>
+            	<li>
+            		<a href="#" class="active">
+                    <span class="fa-brands fa-firefox-browser"></span>
+                    <span>Website</span></a>
+                </li>
+                <li>
+                    <a href="androiddata.html"><span class="fa-brands fa-android"></span>
+                    <span>Android</span></a>
+                </li>
+                <li><a href=""><span class="fa-solid fa-mobile"></span>
+                    <span>Fultter</span></a>
+                </li>
+                <li>
+                    
+                    <a href="phpdata.html"><span class="fa-brands fa-php" style="color:var(--php-color);"></span>
+                    <span style="color: var(--php-color);">Php</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="fa-brands fa-python"></span>
+                    <span>Django</span></a>
+                </li>
+                <li>
+                    
+                    <a href="#"><span class="fa-solid fa-pen-nib"></span>
+                    <span>Web design</span></a>
+                </li>
+                <li>
+                   <a href="file:///C:/Users/abc/Documents/i_BOOK/Data/AndroidKotlin.html"><span class="fa-solid fa-file"></span>
+                    <span>Android kotlin</span></a>
+            	</li>
+            </ul>	
+        </div>
+	</div>
+
+	<div class="main-content">
+		<header>
+			<h2>
+			<div class="header-title">
+				<label for="nav-toggle">
+			      <span class="fas fa-bars"></span>
+			    </label>
+
+			    Php_code
+			</h2>
+			
+		       <div class="search-wrapper">
+		       	    <span class="fas fa-search"></span>
+		       	    <input type="search" name="search" placeholder="Search here">
+		       </div>
+
+		       <div class="user-wrapper">
+		       <img src="img/IMG_20220208_151452_086.jpg"            width="30px" height="30px" alt="">
+		       <div> <h4> Vivek</h4>
+		       	<small>Web Designer</small>
+		       </div>
+		       </div>	    
+			
+		</header>
+
+
+
+		<main>	
+
+				 <div class="container">
+				 	<p> 1. php code use Data show</p>
+         <textarea id="copyText" cols="60" rows="5" placeholder="">
+           //$host="localhost";
+           //$user="id200_project";
+           //$pass="Vivek@09876";
+           // $database="id2004_androidpro";
+
+          <?php
+        
+      $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+        
+    
+          $result= $con->query("select * from Tanactive");
+          while($r= $result->fetch_object())
+          {
+            $row['Aence'][]=$r;
+          }
+           echo json_encode($row);
+      
+?>
+          </textarea>
+         <br />
+         <div class="btn">
+            <button><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip">copied</span>
+         </div>
+
+
+
+        
+      <script>
+         const copyText = document.querySelector("#copyText");
+         const button = document.querySelector("button");
+         const tooltip = document.querySelector(".tooltip");
+         button.addEventListener('click', function(){
+           copyText.select();
+           tooltip.classList.add("show");
+           setTimeout(function(){
+             tooltip.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+			</div>
+
+			
+			
+
+
+
+
+<div class="container1">
+		<p> 2. Search Data</p>
+         <textarea id="copyText1" cols="60" rows="5" placeholder="">
+
+         <?php 
+     $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+
+    $search=$_REQUEST['search'];  
+   
+     $r1= $con->query("select * from Englishbooklist where name LIKE '%$search%' ");
+      
+      while($r= $r1->fetch_object())
+      {
+        $row['Books_data'][]=$r;
+      }
+       echo json_encode($row);
+      
+?>
+
+
+       </textarea>
+         <br />
+         <div class="btn1">
+            <button id="button1"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip1">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText1 = document.querySelector("#copyText1");
+         const button1 = document.querySelector("#button1");
+         const tooltip1 = document.querySelector(".tooltip1");
+         button1.addEventListener('click', function(){
+           copyText1.select();
+           tooltip1.classList.add("show");
+           setTimeout(function(){
+             tooltip1.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+			</div>
+
+
+			<div class="container2">
+		<p> 3. select id</p>
+         <textarea id="copyText2" cols="60" rows="5" placeholder="">
+        
+       
+<?php 
+      
+$Id=$_REQUEST['id']; 
+
+
+$con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+      $result= $con->query("SELECT * from Englishbooklist WHERE id=$Id");
+
+          while($r= $result->fetch_object())
+          {
+            $row['Books_data'][]=$r;
+          }
+           echo json_encode($row);
+?>
+
+       </textarea>
+         <br />
+         <div class="btn2">
+            <button id="button2"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip2">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText2 = document.querySelector("#copyText2");
+         const button2 = document.querySelector("#button2");
+         const tooltip2 = document.querySelector(".tooltip2");
+         button2.addEventListener('click', function(){
+           copyText2.select();
+           tooltip2.classList.add("show");
+           setTimeout(function(){
+             tooltip2.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+			</div>
+
+
+      <div class="container3">
+    <p> 4. cartshow</p>
+         <textarea id="copyText3" cols="60" rows="5" placeholder="">
+         <?php
+
+$id = $_REQUEST['User_id'];
+ 
+ 
+   $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+       
+
+ 
+
+$result= $con->query("
+
+SELECT Englishbooklist.name ,Englishbooklist.url ,Englishbooklist.Book_edition ,Englishbooklist.Book_price,
+    Cart.id,Cart.cart_id
+
+FROM Cart
+INNER JOIN Registration ON Cart.User_id = Registration.User_id 
+INNER JOIN Englishbooklist ON Cart.id = Englishbooklist.id
+WHERE Cart.User_id='$id' AND Cart.status='1'
+
+  ");
+ 
+
+        while($r= $result->fetch_object())
+        {
+             $row['CartBook'][] = $r;
+        }
+            echo json_encode($row);
+
+ 
+
+
+?>
+       </textarea>
+         <br />
+         <div class="btn3">
+            <button id="button3"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip3">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText3 = document.querySelector("#copyText3");
+         const button3 = document.querySelector("#button3");
+         const tooltip3 = document.querySelector(".tooltip3");
+         button3.addEventListener('click', function(){
+           copyText3.select();
+           tooltip3.classList.add("show");
+           setTimeout(function(){
+             tooltip3.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+	
+  <div class="container4">
+    <p> 5. Get Cart</p>
+         <textarea id="copyText4" cols="60" rows="5" placeholder="">
+         <?php
+ 
+$uid = $_REQUEST['User_id'];
+$bid = $_REQUEST['id'];
+$sta = $_REQUEST['status'];
+
+ $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+       
+$result=$con->query(" INSERT INTO Cart(User_id, id, status) VALUES ($uid, $bid, $sta) ");
+
+// $status=$con->query("UPDATE Add_Book SET book_status=false WHERE id='$bid' ");
+
+// if($result)
+//     {
+        
+    $r1= $con->query("select * from Cart WHERE User_id =$uid");
+        while($r= $r1->fetch_object())
+        {
+             $row['BookCart'][]=$r;
+        }
+     
+    echo json_encode($row);
+// } 
+?>
+       </textarea>
+         <br />
+         <div class="btn4">
+            <button id="button4"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip4">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText4 = document.querySelector("#copyText4");
+         const button4 = document.querySelector("#button4");
+         const tooltip4 = document.querySelector(".tooltip4");
+         button4.addEventListener('click', function(){
+           copyText4.select();
+           tooltip4.classList.add("show");
+           setTimeout(function(){
+             tooltip4.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+
+      <div class="container5">
+    <p> 6. Order Cart</p>
+         <textarea id="copyText5" cols="60" rows="5" placeholder="">
+          <?php
+
+$uid = $_REQUEST['User_id'];
+$cid = $_REQUEST['cart_id'];
+ 
+ 
+    $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+
+ 
+
+$result= $con->query("
+
+SELECT Englishbooklist.name ,Englishbooklist.url ,Englishbooklist.Book_edition ,Englishbooklist.Book_price,
+    Cart.id,Cart.cart_id
+FROM Cart
+INNER JOIN Registration ON Cart.User_id = Registration.User_id 
+INNER JOIN Englishbooklist ON Cart.id = Englishbooklist.id
+WHERE Cart.User_id='$uid'  AND  Cart.cart_id ='$cid'
+
+  ");
+ 
+
+        while($r= $result->fetch_object())
+        {
+             $row['CartBook'][] =$r;
+        }
+            echo json_encode($row);
+
+?>
+
+       </textarea>
+         <br />
+         <div class="btn5">
+            <button id="button5"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip5">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText5 = document.querySelector("#copyText5");
+         const button5 = document.querySelector("#button5");
+         const tooltip5 = document.querySelector(".tooltip5");
+         button5.addEventListener('click', function(){
+           copyText5.select();
+           tooltip5.classList.add("show");
+           setTimeout(function(){
+             tooltip5.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+       <div class="container6">
+    <p> 7. Remove Cart</p>
+         <textarea id="copyText6" cols="60" rows="6" placeholder="">
+        <?php
+
+
+$uid = $_REQUEST['User_id'];
+$cid = $_REQUEST['cart_id'];
+
+ 
+ 
+        $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+
+$result =$con ->query( "DELETE FROM Cart WHERE User_id = '$uid' AND cart_id = '$cid'");
+ 
+
+if($result) 
+    {
+        echo "Remove Successes";
+    }
+ 
+?>
+       </textarea>
+         <br />
+         <div class="btn6">
+            <button id="button6"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip6">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText6 = document.querySelector("#copyText6");
+         const button6 = document.querySelector("#button6");
+         const tooltip6 = document.querySelector(".tooltip6");
+         button6.addEventListener('click', function(){
+           copyText6.select();
+           tooltip6.classList.add("show");
+           setTimeout(function(){
+             tooltip6.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+
+      <div class="container7">
+    <p> 8. Get Feedback</p>
+         <textarea id="copyText7" cols="60" rows="7" placeholder="">
+          <?php
+
+
+ $uid = $_REQUEST['User_id'];
+ $fcomment = $_REQUEST['Feedback_comments'];
+ $frating = $_REQUEST['Feedback_rating'];
+
+   $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+  
+  $query= "INSERT INTO `Feedback`(`User_id`, `Feedback_comments`, `Feedback_rating`) values('$uid','$fcomment','$frating')";
+      
+    $result = mysqli_query($con, $query);
+    
+      if($result)
+      {
+         $r1= $con->query("select * from Feedback");
+          while($r= $r1->fetch_object())
+          {
+            $row['feed'][]=$r;
+          }
+           echo json_encode($row);
+      }
+      
+?>
+       </textarea>
+         <br />
+         <div class="btn7">
+            <button id="button7"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip7">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText7 = document.querySelector("#copyText7");
+         const button7 = document.querySelector("#button7");
+         const tooltip7 = document.querySelector(".tooltip7");
+         button7.addEventListener('click', function(){
+           copyText7.select();
+           tooltip7.classList.add("show");
+           setTimeout(function(){
+             tooltip7.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+      <div class="container8">
+    <p> 9. (Part 2.) Get Payment id</p>
+         <textarea id="copyText8" cols="60" rows="5" placeholder="">
+          <?php 
+
+    $bid=$_REQUEST["id"];
+    $cid=$_REQUEST["cart_id"];
+    $uid=$_REQUEST["User_id"];
+    $type=$_REQUEST["payment_type"];
+    $status=$_REQUEST["payment_status"];
+
+
+   
+    
+     $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+
+    $result = $con->query( "select payment_id from Payment where 
+    id='$bid' AND cart_id='$cid' AND User_id='$uid' AND payment_type='$type' AND payment_status='$status' "); 
+  
+    
+     if($result){
+     
+         while($r= $result->fetch_object())
+          {
+            $row['Pay'][]=$r;
+ 
+          }
+           echo json_encode($row);
+     }
+?>
+
+ 
+       </textarea>
+         <br />
+         <div class="btn8">
+            <button id="button8"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip8">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText8 = document.querySelector("#copyText8");
+         const button8 = document.querySelector("#button8");
+         const tooltip8 = document.querySelector(".tooltip8");
+         button8.addEventListener('click', function(){
+           copyText8.select();
+           tooltip8.classList.add("show");
+           setTimeout(function(){
+             tooltip8.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+
+
+<div class="container9">
+    <p> 10. Get Payment</p>
+         <textarea id="copyText9" cols="60" rows="5" placeholder="">
+          <?php 
+
+    
+    
+    $bid=$_REQUEST["id"];
+    $cid=$_REQUEST["cart_id"];
+    $uid=$_REQUEST["User_id"];
+    $type=$_REQUEST["payment_type"];
+    $status=$_REQUEST["payment_status"];
+    
+
+      $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+ 
+  
+   $result =$con-> query("
+   
+    INSERT INTO `Payment` ( `id`, `cart_id`, `User_id`, `payment_type`, `payment_status`)
+    VALUES ( '$bid', '$cid', '$uid', '$type', '$status')");
+ 
+
+    if($result){
+              
+          $r1= $con->query("select * from Payment");
+          while($r= $r1->fetch_object())
+          {
+            $row['Pay'][]=$r;
+          }
+           echo json_encode($row);
+         
+          }
+    
+    ?>
+       </textarea>
+         <br />
+         <div class="btn9">
+            <button id="button9"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip9">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText9 = document.querySelector("#copyText9");
+         const button9 = document.querySelector("#button9");
+         const tooltip9 = document.querySelector(".tooltip9");
+         button9.addEventListener('click', function(){
+           copyText9.select();
+           tooltip9.classList.add("show");
+           setTimeout(function(){
+             tooltip9.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+      <div class="container10">
+    <p> 11. (Part 4.) Get Payment Order</p>
+         <textarea id="copyText10" cols="60" rows="5" placeholder="">
+     <?php 
+
+    
+    $user_id=$_REQUEST["User_id"];
+    $book_id=$_REQUEST["id"];
+    $pay_id=$_REQUEST["payment_id"];
+    $status=$_REQUEST["status"];
+    $ordate=$_REQUEST["odate"];
+    $ortime=$_REQUEST["otime"];
+
+     $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+ 
+   $result =$con-> query("
+   
+   INSERT INTO `Book_Order` (`User_id`, `id`, `payment_id`, `status`, `odate`, `otime`) VALUES('$user_id','$book_id','$pay_id','$status','$ordate','$ortime')");
+ 
+
+            
+          $r1= $con->query("select * from Book_Order");
+          while($r= $r1->fetch_object())
+          {
+            $row['OrderPayment'][]=$r;
+          }
+           echo json_encode($row);
+        
+          
+    ?>
+
+       </textarea>
+         <br />
+         <div class="btn10">
+            <button id="button10"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip10">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText10 = document.querySelector("#copyText10");
+         const button10 = document.querySelector("#button10");
+         const tooltip10 = document.querySelector(".tooltip10");
+         button10.addEventListener('click', function(){
+           copyText10.select();
+           tooltip10.classList.add("show");
+           setTimeout(function(){
+             tooltip10.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+      <div class="container11">
+    <p> 12. Login</p>
+    <textarea id="copyText11" cols="60" rows="5" placeholder="">
+<?php 
+
+   $uname=$_REQUEST['User_name'];
+   $password=$_REQUEST['Password'];
+    
+     $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+
+    $result = $con->query( "select * from Registration where User_name='$uname' and Password ='$password'"); 
+     if($result){
+     
+         while($r= $result->fetch_object())
+          {
+            $row['registration'][]=$r;
+ 
+          }
+           echo json_encode($row);
+     }
+?>
+ 
+       </textarea>
+         <br />
+         <div class="btn11">
+            <button id="button11"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip11">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText11 = document.querySelector("#copyText11");
+         const button11 = document.querySelector("#button11");
+         const tooltip11 = document.querySelector(".tooltip11");
+         button11.addEventListener('click', function(){
+           copyText11.select();
+           tooltip11.classList.add("show");
+           setTimeout(function(){
+             tooltip11.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+
+      <div class="container12">
+    <p> 13. registration</p>
+    <textarea id="copyText12" cols="60" rows="5" placeholder="">
+    <?php
+
+    $uname=$_REQUEST['User_name'];
+    $email=$_REQUEST['Email'];
+    // $phoneno=$_REQUEST['Phoneno'];
+//      $bio=$_REQUEST['Bio'];
+//   $address=$_REQUEST['Address'];
+    // $ulat=$_REQUEST['lat'];
+    // $ulog =$_REQUEST['log'];
+    // $profile_picture=$_REQUEST['Profile_picture'];
+    // $ugender=$_REQUEST['gender'];
+    // $udob=$_REQUEST['dob'];
+    $password=$_REQUEST['Password'];
+    
+    
+    
+    
+     $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+    //   $result= $con->query("INSERT INTO `Registration`(  `User_name`, `Email`, `Phoneno`, `Bio`, `Address`, `lat`, `log`, `Profile_picture`, `gender`, `dob`, `Password`) values( '$uname','$email','$phoneno','$bio','$address','$ulat','$ulog','$profile_picture','$ugender','$udob','$password')");
+    
+    $result= $con->query("INSERT INTO `Registration`(  `User_name`, `Email`, `Password`) values( '$uname','$email','$password')");
+      
+      if($result)
+      {
+         $r1= $con->query("select * from Registration ");
+          while($r= $r1->fetch_object())
+          {
+            $row['registration'][]=$r;
+          }
+           echo json_encode($row);
+      }
+      
+?>
+
+              </textarea>
+         <br />
+         <div class="btn12">
+            <button id="button12"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip12">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText12 = document.querySelector("#copyText12");
+         const button12 = document.querySelector("#button12");
+         const tooltip12 = document.querySelector(".tooltip12");
+         button12.addEventListener('click', function(){
+           copyText12.select();
+           tooltip12.classList.add("show");
+           setTimeout(function(){
+             tooltip12.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+
+      <div class="container13">
+    <p> 14. Update Data</p>
+    <textarea id="copyText13" cols="60" rows="5" placeholder="">
+    <?php 
+
+
+   $password=$_REQUEST['Password'];
+   $Id=$_REQUEST['User_id'];
+   
+       $con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+      
+       $result= $con->query("update  Registration set Password='$password' where User_id='$Id'");
+      
+        if($result)
+          {
+          $r1= $con->query("select * from Registration");
+          while($r= $r1->fetch_object())
+          {
+            $row['registration'][]=$r;
+          }
+           echo json_encode($row);
+        } 
+?>
+
+              </textarea>
+         <br />
+         <div class="btn13">
+            <button id="button13"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip13">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText13 = document.querySelector("#copyText13");
+         const button13 = document.querySelector("#button13");
+         const tooltip13 = document.querySelector(".tooltip13");
+         button13.addEventListener('click', function(){
+           copyText13.select();
+           tooltip13.classList.add("show");
+           setTimeout(function(){
+             tooltip13.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+
+      <div class="container14">
+    <p> 15. Upload Profile Picture
+    </p><p style="font-size: 15px;color: #ff5200;">Note: Create folder:- Profilesave</p>
+    <textarea id="copyText14" cols="60" rows="5" placeholder="">
+
+
+
+
+
+    <?php
+
+$con = new mysqli("localhost","id200_project","Vivek@09876","id2004_androidpro");
+
+    $filename=$_FILES['file']['name'];
+     $name=$_POST["name"];
+
+    $Id=$_POST['User_id'];
+    
+    $path="Profilesave/$filename";
+    
+    // $url=$_REQUEST['Profile_picture'];
+    
+//   $profile_picture=$_REQUEST['Profile_picture'];
+
+
+     $url="https://vivekthummar.com/project/$path";
+     
+
+     $ins = "UPDATE `Registration` SET `Profile_picture`='$url' WHERE `User_id`='$Id'"; 
+     
+    move_uploaded_file($_FILES['file']['tmp_name'], $path);
+        $con->query($ins);
+      $result= $con->query("select * from Registration ");
+      
+      if($result){
+   
+          while($r= $result->fetch_object())
+          {
+            $row['images'][]=$r;
+          }
+           echo json_encode($row);
+      }
+ ?>
+              </textarea>
+         <br />
+         <div class="btn14">
+            <button id="button14"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip14">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText14 = document.querySelector("#copyText14");
+         const button14 = document.querySelector("#button14");
+         const tooltip14 = document.querySelector(".tooltip14");
+         button14.addEventListener('click', function(){
+           copyText14.select();
+           tooltip14.classList.add("show");
+           setTimeout(function(){
+             tooltip14.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+      <div class="container15">
+    <p> 16. APIInterface Exmple And Dependencies Add</p>
+    <textarea id="copyText15" cols="60" rows="5" placeholder="">
+
+
+    @Multipart
+    @POST("project/Profilepic.php")
+    Call<ResultImage> upload(@Part MultipartBody.Part image,
+                             @Part("User_id")RequestBody uid);
+
+
+   dependencies:-                      
+
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation  'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+
+
+              </textarea>
+         <br />
+         <div class="btn15">
+           <button id="button15"><i class="far fa-copy copyIcon fa-lg"></i> Copy</button><span class="tooltip15">copied</span>
+         </div>
+
+
+        
+        
+      <script>
+         const copyText15 = document.querySelector("#copyText15");
+         const button15 = document.querySelector("#button15");
+         const tooltip15 = document.querySelector(".tooltip15");
+         button15.addEventListener('click', function(){
+           copyText15.select();
+           tooltip15.classList.add("show");
+           setTimeout(function(){
+             tooltip15.classList.remove("show");
+           },700);
+           if(document.execCommand("copy")){
+           }else{
+             alert("Something went wrong!");
+           }
+         });
+
+
+      </script>
+      </div>
+
+		</main>
+	
+			
+  
+</body>
+</html>

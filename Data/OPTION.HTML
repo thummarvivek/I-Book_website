@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>online shopping</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="img\logo.png">
+	<link href="fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    
+	<style type="text/css">
+		
+*
+{
+margin: 0;
+padding: 0;
+}
+
+.big-box{
+	margin-top: 60px;  
+	margin-left: 20%;
+    padding: 1rem 1.5rem;
+    background: #f1f5f9;
+    min-height: calc(175vh - 190px);
+    position: relative;
+}
+.big-box-bo{
+	display: grid;
+	height: 200px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 30px;
+}
+
+.big-box-box{
+	display: flex;
+	justify-content: space-between;
+	background: #ffffff;
+	padding: 2rem;
+	border-radius: 2px ;
+
+}           
+
+.big-box-b{	
+	margin-top: 20px;
+	display: grid;
+	height: 200px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 30px;
+}
+
+.big-box-ox{
+	display: flex;
+	justify-content: space-between;
+	background: #ffffff;
+	padding: 2rem;
+	border-radius: 2px ;
+
+} 
+
+.big-box-bb{	
+	margin-top: 20px;
+	display: grid;
+	height: 200px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 30px;
+}
+
+.big-box-oxx{
+	display: flex;
+	justify-content: space-between;
+	background: #ffffff;
+	padding: 2rem;
+	border-radius: 2px ;
+
+} 
+
+.big-box-boo{	
+	margin-top: 20px;
+	display: grid;
+	height: 200px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 30px;
+}
+
+.big-box-bbx{
+	display: flex;
+	justify-content: space-between;
+	background: #ffffff;
+	padding: 2rem;
+	border-radius: 2px ;
+
+}          
+#bbx{
+	position: absolute;
+	/*background: url();*/
+	display: flex;
+	width: 200px;
+	height: 170px;
+	margin-bottom: 40px;
+	margin-top: -25px;
+	margin-left: -23px;
+	object-fit: cover;
+}
+.side {
+	margin-top: 60px;
+	width: 260px;
+	position: fixed;
+	left: 0;
+    top:0;
+	height: 95%;
+	background: linear-gradient(to top,rgba(0, 0, 0, 0.8)50%,rgba(0, 0, 0, 0.8)50%);
+	transition: width 300ms;
+	border-radius: 0px 10px 10px 0px;
+	object-fit: covor;
+}
+ /*.side{
+	width: 250px;
+	height: 480px;
+	background: linear-gradient(to top,rgba(0, 0, 0, 0.8)50%,rgba(0, 0, 0, 0.8)50%);
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  border-radius: 10px;
+  padding: 25px
+}*/
+.side video{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 260px;
+	height: 577px;
+    display: flex;
+    object-fit: cover;	
+	z-index: 2;
+	border-radius: 0px  10px 10px 0px;
+	pointer-events: none;
+	mix-blend-mode: screen;
+
+}
+#big_bull{
+	color:#9400d3 ;
+	position: absolute;
+	margin-top: 150px;
+	margin-left: 135px;
+}
+#small_bull{
+	color:#800080 ;
+	position: absolute;
+	margin-top: 150px;
+	margin-left: -20px;
+
+}
+.display{
+	display: flex;
+	margin-top: 0px;
+	width: 100%;
+	position:fixed;
+	z-index: 100;
+    transition: left 300ms;
+	left: 0;
+    top:0;
+	height: 8%;
+	background: linear-gradient(to top,rgba(159,0,197)50%,rgba(159,0,197)50%);
+	transition: width 300ms;
+	border-radius: 0px 10px 10px 0px;
+	object-fit: covor;
+    
+}
+.user{
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	margin-left: 89%;
+}
+.user img{
+	border-radius: 50%;
+	margin-right: 1rem;
+
+}
+.user small{
+	display: inline-block;
+	color: #f0f0f0;
+}
+.search{
+	/*margin-left: 250px;
+	margin-right: 400px;*/
+	border: 1px solid #ccc;
+	border-radius: 30px;
+	
+	display: flex;
+	align-items: center;
+	overflow-x: hidden;
+	margin-top: 10px;
+	margin-left:50% ;
+	position: absolute;
+}	
+.search span{
+	display: inline-block;
+	padding: 0rem 1rem;
+	font-size: 1.6rem;
+}
+.search input{
+	height: 100%;
+	padding: .5rem;
+	border: none;
+	outline: none;
+	color: #f0f0f0;
+	background: #9f00c5;
+}
+
+.vk1{	
+	top: 15px;
+	margin-left: 10px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk2{
+    top: 15px;
+    margin-left: 25px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk3{
+     top: 15px;
+     margin-left: 40px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}	
+.vk4{	
+	top: 15px;
+	margin-left: 55px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk5{
+    top: 15px;
+    margin-left: 70px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk6{
+     top: 15px;
+     margin-left: 85px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}	
+.vk7{	
+	top: 15px;
+	margin-left: 100px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk8{
+    top: 15px;
+    margin-left: 115px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk9{
+     top: 15px;
+     margin-left: 130px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}	
+.vk10{	
+	top: 15px;
+	margin-left: 145px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk11{
+    top: 15px;
+    margin-left: 160px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk12{
+     top: 15px;
+     margin-left: 175px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}	
+.vk13{	
+	top: 15px;
+	margin-left: 190px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk14{
+    top: 15px;
+    margin-left: 205px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk15{
+     top: 15px;
+     margin-left: 220px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}	
+.vk16{	
+	top: 15px;
+	margin-left: 235px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk17{
+    top: 15px;
+    margin-left: 250px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+/*.vk18{
+    top: 15px;
+    margin-left: 265px;
+    animation: animate 6.5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk19{	
+	top: 15px;
+	margin-left: 280px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk20{
+    top: 15px;
+    margin-left: 295px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk21{
+     top: 15px;
+     margin-left: 310px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk22{	
+	top: 15px;
+	margin-left: 325px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk23{
+    top: 15px;
+    margin-left: 340px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}*/
+.vk24{
+     top: 15px;
+     margin-left: 250px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk25{	
+	top: 15px;
+	margin-left: 270px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk26{
+    top: 15px;
+    margin-left: 285px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk27{
+     top: 15px;
+     margin-left: 300px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk28{	
+	top: 15px;
+	margin-left: 315px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk29{
+    top: 15px;
+    margin-left: 330px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk30{
+     top: 15px;
+     margin-left: 345px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk31{	
+	top: 15px;
+	margin-left: 360px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk32{
+    top: 15px;
+    margin-left: 375px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk33{
+     top: 15px;
+     margin-left: 390px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk34{	
+	top: 15px;
+	margin-left: 405px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk35{
+    top: 15px;
+    margin-left: 420px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk36{
+     top: 15px;
+     margin-left: 435px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk37{	
+	top: 15px;
+	margin-left: 450px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk38{
+    top: 15px;
+    margin-left: 465px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+ .vk39{
+     top: 15px;
+     margin-left: 480px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk40{	
+	top: 15px;
+	margin-left: 495px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk41{
+    top: 15px;
+    margin-left: 510px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk42{
+     top: 15px;
+     margin-left: 525px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk43{	
+	top: 15px;
+	margin-left: 540px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk44{
+    top: 15px;
+    margin-left: 555px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk45{
+     top: 15px;
+     margin-left: 570px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk46{	
+	top: 15px;
+	margin-left: 585px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk47{
+    top: 15px;
+    margin-left: 600px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk48{
+     top: 15px;
+     margin-left: 615px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk49{	
+	top: 15px;
+	margin-left: 870px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk50{
+    top: 15px;
+    margin-left: 885px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk51{
+     top: 15px;
+     margin-left: 900px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk52{	
+	top: 15px;
+	margin-left: 915px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk53{
+    top: 15px;
+    margin-left: 930px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk54{
+     top: 15px;
+     margin-left: 945px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk55{	
+	top: 15px;
+	margin-left: 960px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk56{
+    top: 15px;
+    margin-left: 975px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk57{
+     top: 15px;
+     margin-left: 990px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk58{	
+	top: 15px;
+	margin-left: 1005px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk59{
+    top: 15px;
+    margin-left: 1020px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk60{
+     top: 15px;
+     margin-left: 1035px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk61{	
+	top: 15px;
+	margin-left: 1050px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk62{
+    top: 15px;
+    margin-left: 1065px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk63{
+     top: 15px;
+     margin-left: 1080px;
+     animation: animate 6.5s linear infinite;
+     animation-delay: calc(0.1s * var(--clr));
+}
+.vk64{	
+	top: 15px;
+	margin-left: 1095px;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+.vk65{
+    top: 15px;
+    margin-left: 1110px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--clr));
+}
+	
+#vk{
+	content: "";
+	position: absolute;	
+	width: 15px;
+	height: 15px;
+	z-index: 9;
+	border-radius: 50%;
+	background: var(--clr);
+    box-shadow: 0 0 20px var(--clr),
+    0 0 60px var(--clr);
+    }
+@keyframes animate
+{
+	0%
+	{
+		transform:scale(1); 
+	}
+	50%
+ {
+	transform: scale(0.1);
+ }
+}
+
+	</style>
+
+</head>
+<body>
+	<div class="display">
+		 <div class="user">
+		       <img src="img/IMG_20220208_151452_086.jpg"            width="30px" height="30px" alt="">
+		          <div> <h4> Vivek</h4>
+		       	        <small>Web Designer</small>
+		          </div>
+		  </div>
+
+		    <div class="search">
+		       	    <span class="fas fa-search"></span>
+		       	    <input type="search" name="search" placeholder="Search here">
+		    </div>
+
+		    <div class="vk1"  id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk2"  id="vk" style="--clr:#fee800;"></div>
+			<div class="vk3"  id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk4"  id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk5"  id="vk" style="--clr:#fee800;"></div>
+			<div class="vk6"  id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk7"  id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk8"  id="vk" style="--clr:#fee800;"></div>
+			<div class="vk9"  id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk10" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk11" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk12" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk13" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk14" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk15" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk16" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk17" id="vk" style="--clr:#fee800;"></div>
+		 <!--div class="vk18" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk19" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk20" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk21" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk22" id="vk" style="--clr:#04fc43;"></div>
+	   	  <div class="vk23" id="vk" style="--clr:#fee800;"></div-->
+			<div class="vk24" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk25" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk26" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk27" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk28" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk29" id="vk" style="--clr:#fee800;"></div>			 
+			<div class="vk30" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk31" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk32" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk33" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk34" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk35" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk36" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk37" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk38" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk39" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk40" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk41" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk42" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk43" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk44" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk45" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk46" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk47" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk48" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk49" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk50" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk51" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk52" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk53" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk54" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk55" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk56" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk57" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk58" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk59" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk60" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk61" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk62" id="vk" style="--clr:#fee800;"></div>
+			<div class="vk63" id="vk" style="--clr:#ff2972;"></div>
+			<div class="vk64" id="vk" style="--clr:#04fc43;"></div>
+			<div class="vk65" id="vk" style="--clr:#fee800;"></div>
+			
+</div>
+	<div class="big-box">
+
+		<div class="big-box-bo">
+		<div class="big-box-box">
+			<img src="img/watch1.jpg" id="bbx">
+			<p id="small_bull">series 7apple(in):-</p>
+			<p id="big_bull">₹80k</p>
+
+		</div>
+
+		<div class="big-box-box">
+			<img src="img/watch2.jpg" id="bbx">
+			<p id="small_bull">series 3apple(in):-</p>
+			<p id="big_bull">₹90k</p>
+		</div>
+
+		<div class="big-box-box">
+			<img src="img/watch3.jpg" id="bbx">
+			<p id="small_bull">series 7apple(in):-</p>
+			<p id="big_bull">₹100k</p>
+		</div>
+     
+        <div class="big-box-box">
+        	<img src="img/watch4.webp" id="bbx">
+        	<p id="small_bull">series 7apple(in):-</p>
+			<p id="big_bull">₹110k</p>
+        </div>
+
+	    </div>
+
+	    <div class="big-box-b">
+		<div class="big-box-ox">
+			<img src="img/watch.1.jpg" id="bbx">
+			<p id="small_bull">apple watch(in):-</p>
+			<p id="big_bull">₹55k</p>
+		</div>
+
+		<div class="big-box-ox">
+			<img src="img/watch.2.webp" id="bbx" >
+			<p id="small_bull">apple watch(in):-</p>
+			<p id="big_bull">₹61k</p>
+		</div>
+
+		<div class="big-box-ox">
+			<img src="img/watch.3.jpg" id="bbx">
+			<p id="small_bull">apple Edition(in):-</p>
+			<p id="big_bull">₹70k</p>
+		</div>
+     
+        <div class="big-box-ox">
+        	<img src="img/watch.4.jpg" id="bbx">
+        	<p id="small_bull">apple watch(in):-</p>
+			<p id="big_bull">₹75k</p>
+        </div>
+
+	    </div>
+
+	    <div class="big-box-bb">
+		<div class="big-box-oxx">
+			<img src="img/10pro.jpg" id="bbx">
+			<p id="small_bull">iphone x(in):-</p>
+			<p id="big_bull">₹90k</p>
+		</div>
+
+		<div class="big-box-oxx">
+			<img src="img/11pro.webp" id="bbx">
+			<p id="small_bull">iphone11 pro(in):-</p>
+			<p id="big_bull">₹109k</p>
+		</div>
+
+		<div class="big-box-oxx">
+			<img src="img/12pro.jpg" id="bbx">
+			<p id="small_bull">iphone12 pro(in):-</p>
+			<p id="big_bull">₹150k</p>
+		</div>
+     
+        <div class="big-box-oxx">
+        	<p id="small_bull">iphone13 pro(in):-</p>
+			<p id="big_bull">₹160k</p>
+        	<img src="img/13pro.jpg" id="bbx">
+        </div>
+
+	    </div>
+
+	    <div class="big-box-boo">
+		<div class="big-box-bbx">
+		<img src="img/macbook.webp" id="bbx">
+		<p id="small_bull">macbook(in):-</p>
+			<p id="big_bull">₹100k</p>
+		</div>
+
+
+		<div class="big-box-bbx">
+			<img src="img/lenovo_thinkpad_x1yoga.webp" id="bbx">
+			<p id="small_bull">lenovo_thinkpad(in):-</p>
+			<p id="big_bull">₹200k</p>
+		</div>
+
+		<div class="big-box-bbx">
+			<img src="img/HP-Pavilion-Aero-Laptop.jpg" id="bbx">
+			<p id="small_bull">HP-Pavilion-Aero(in):-</p>
+			<p id="big_bull">₹80k</p>
+
+		</div>
+     
+        <div class="big-box-bbx">
+        	<img src="img/dell laptop.4.jpg" id="bbx">
+        	<p id="small_bull">dell_9310xps(in):-</p>
+			<p id="big_bull">₹115k</p>
+        </div>
+
+	    </div>
+	</div>
+
+	<div class="side">
+		<!--video SRC="img/C:\Users\lenovo\Documents\web page123\start web\data\intro1651749834648.mp4" muted="" autoplay=""-->
+		<video src="img/intro1651749834648.mp4" muted="" autoplay=""></video>
+    </div>
+
+
+
+</body>
+</html>
